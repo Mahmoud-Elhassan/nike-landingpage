@@ -1,0 +1,217 @@
+.content {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    // height: 89vh;
+    .description {
+        min-width: 40%;
+        display: flex;
+        align-items: center;
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 80%;
+            height: 70%;
+            padding: 40px;
+            .name {
+                font-size: 7rem;
+                font-weight: bold;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                animation: slide-up 0.4s linear;
+                .name-span {
+                    color: #d1e8e2;
+                }
+            }
+            .price {
+                font-size: 2rem;
+                font-weight: 500;
+                color: #d1e8e2;
+                z-index: 1;
+                animation: fade-in 0.5s linear;
+            }
+            .product-description {
+                font-size: 1.5rem;
+                z-index: 1;
+                animation: fade-in 0.5s linear;
+            }
+            a {
+                text-decoration: none;
+                color: #2c3531;
+                background-color: #d1e8e2;
+                width: 10rem;
+                height: 3rem;
+                text-align: center;
+                line-height: 3rem;
+                border-radius: 24px;
+                transition: 0.3s;
+                z-index: 1;
+                animation: slide-right 0.5s linear;
+                &:hover {
+                    color: #d1e8e2;
+                    background-color: #2c3531;
+                }
+            }
+        }
+    }
+    .right-side {
+        min-width: 60%;
+        .shoes-container {
+            width: 100%;
+            height: 89vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .circle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35rem;
+                height: 35rem;
+                border-radius: 50%;
+                background-color: #d1e8e2;
+                box-shadow: 0px 0px 20px #d1e8e2;
+                transform: rotate(-24deg);
+                img {
+                    width: 105%;
+                    transform: rotate(-24deg);
+                    animation: slide-left 0.6s linear;
+                }
+            }
+        }
+    }
+    #nike {
+        width: 100%;
+        height: 89vh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 42rem;
+        font-weight: bold;
+        // -webkit-text-fill-color: transparent;
+        // -webkit-text-stroke: black 5px;
+        background: -webkit-linear-gradient(45deg, #2c3531, #116466);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.2;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 768px) {
+    .content {
+        flex-direction: column-reverse;
+        #nike {
+            display: none;
+        }
+        .description {
+            width: 100%;
+            height: 75vh;
+            margin-bottom: 100px;
+            div {
+                width: 100%;
+                height: 100%;
+                justify-content: space-between;
+                padding: 0px 15px;
+                .name {
+                    position: static;
+                    // text-align: center;
+                    font-size: 3.1rem;
+                }
+                a {
+                    align-self: center;
+                    &:hover {
+                        color: #2c3531;
+                        background-color: #d1e8e2;
+                    }
+                }
+            }
+        }
+        .right-side {
+            height: 20rem;
+            .shoes-container {
+                height: 100%;
+                .circle {
+                    width: 15rem;
+                    height: 15rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+    .content {
+        .description {
+            height: 68vh;
+        }
+    }
+}
+
+@media (min-width: 550px) and (max-width: 768px) {
+    .content {
+        .description {
+            div {
+                justify-content: space-evenly;
+                .name {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content {
+        .description {
+            div {
+                width: 100%;
+                height: 85%;
+                .name {
+                    font-size: 5rem;
+                }
+            }
+        }
+        .right-side {
+            .shoes-container {
+                .circle {
+                    width: 25rem;
+                    height: 25rem;
+                }
+            }
+        }
+    }
+}
